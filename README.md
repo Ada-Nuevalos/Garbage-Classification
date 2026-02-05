@@ -31,20 +31,20 @@ La clasificación de residuos basada en imágenes ha evolucionado desde métodos
 
 ### Tabla Comparativa de Modelos (Benchmark en TrashNet)
 
-La siguiente tabla resume los resultados reportados en la literatura científica analizada para este problema sobre el dataset TrashNet (o variantes aumentadas del mismo):
+La siguiente tabla resume los resultados reportados en la literatura científica analizada para este problema sobre el mismo dataset o diferentes versiones de este:
 
-| Referencia (Paper) | Modelo / Técnica | Estrategia Clave | Accuracy (Test) |
-| :--- | :--- | :--- | :--- |
-| **Yang & Thung (Base)** [2016] | SVM (SIFT) | ML Clásico (Baseline) | 63.00% |
-| **Ozkaya & Seyfi** | GoogleNet + SVM | Fine-tuning + SVM Classifier | 97.86% |
-| **Mao et al.** | **Optimized DenseNet121** | **Genetic Algo. + Data Augmentation** | **99.60%** |
-| **White et al.** | WasteNet (DenseNet) | Transfer Learning (Edge computing) | 97.00% |
-| **Alkılınç et al.** | Weighted Ensemble | Ensemble (ResNet50 + ConvNeXt + DenseNet) | 96.00% |
-| **Qiu et al.** | CE-EfficientNetV2 | Channel Efficient Attention | 96.50% |
-| **Shukurov** | ResNeXt50 | Fine-tuning con optimizador Adam | 95.00% |
-| **Buchade & Bhoite** | MobileNetV2 | Transfer Learning (Ligero) | 95.17% |
+| Referencia (Paper) | Modelo / Técnica | Estrategia Clave | Accuracy | Precision | Recall | F1-Score |
+| :--- | :--- | :--- | :---: | :---: | :---: | :---: |
+| **Yang & Thung** [2016] | SVM (SIFT) | ML Clásico (Baseline) | 63.00% | - | - | - |
+| **Ozkaya & Seyfi** | GoogleNet + SVM | Fine-tuning + SVM Classifier | 97.86% | - | - | - |
+| **Mao et al.** | **Optimized DenseNet121** | **Genetic Algo. + Data Aug.** | **99.60%** | - | - | - |
+| **White et al.** | WasteNet (DenseNet) | Transfer Learning (Edge) | 97.00% | 97.00% | 97.00% | 97.00% |
+| **Alkılınç et al.** | Weighted Ensemble | Ensemble (ResNet+ConvNeXt) | 96.00% | 94.00% | 97.00% | 95.00% |
+| **Qiu et al.** | CE-EfficientNetV2 | Channel Efficient Attention | 96.50% | - | - | - |
+| **Shukurov** | ResNeXt50 | Fine-tuning + Adam Opt. | 95.00% | - | - | - |
+| **Buchade & Bhoite** | MobileNetV2 | Transfer Learning (Ligero) | 95.17% | - | - | - |
 
-> **Nota:** Las precisiones superiores al 95% en la literatura generalmente involucran técnicas intensivas de *Data Augmentation* para multiplicar artificialmente el tamaño del dataset original.
+> **Nota:** Las precisiones superiores al 95% en la literatura generalmente involucran técnicas intensivas de *Data Augmentation* para multiplicar artificialmente el tamaño del dataset original. Los campos marcados con "-" indican que la métrica no fue reportada explícitamente en el resumen del estudio.
 
 ---
 
