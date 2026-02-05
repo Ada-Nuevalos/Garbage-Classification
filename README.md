@@ -35,16 +35,16 @@ La siguiente tabla resume los resultados reportados en la literatura científica
 
 | Modelo | Dataset | Accuracy | Precision | Recall | F1-Score | Referencia |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| *WasteNet* (DenseNet modificado) | TrashNet | *97.0%* | 97.0% | 97.0% | 97.0% | White et al. [Source 3] |
-| *GoogleNet + SVM* | TrashNet | *97.86%* | - | - | - | Özkaya et al. [Source 2] |
-| *Ensemble (Weighted Avg)* | TrashNet | 96.0% | 94.0% | 97.0% | 95.0% | Alkılınç et al. [Source 9] |
-| *CE-EfficientNetV2* | TrashNet | 96.5% | - | - | - | Qiu et al. [Source 4] |
-| *MobileNetV2* | TrashNet | 95.17% | - | - | - | Buchade et al. [Source 5] |
-| *DenseNet169* | TrashNet | 95.3% | 95.4% | 95.3% | 95.3% | White et al. [Source 3] |
-| *ResNet50* | TrashNet | 93.7% | 93.7% | 93.7% | 93.7% | White et al. [Source 3] |
-| *VGG16* | TrashNet | 92.8% | 92.7% | 92.8% | 92.7% | White et al. [Source 3] |
-| *AlexNet* | TrashNet | 78.4% | 78.6% | 78.4% | 78.2% | White et al. [Source 3] |
-| *SVM + SIFT* (Baseline) | TrashNet | 63.0% | 59.0% | 60.0% | - | Thung & Yang [Source 8] |
+| *WasteNet* (DenseNet modificado) | TrashNet | *97.0%* | 97.0% | 97.0% | 97.0% | White et al. |
+| *GoogleNet + SVM* | TrashNet | *97.86%* | - | - | - | Özkaya et al.|
+| *Ensemble (Weighted Avg)* | TrashNet | 96.0% | 94.0% | 97.0% | 95.0% | Alkılınç et al.|
+| *CE-EfficientNetV2* | TrashNet | 96.5% | - | - | - | Qiu et al.|
+| *MobileNetV2* | TrashNet | 95.17% | - | - | - | Buchade et al. |
+| *DenseNet169* | TrashNet | 95.3% | 95.4% | 95.3% | 95.3% | White et al. |
+| *ResNet50* | TrashNet | 93.7% | 93.7% | 93.7% | 93.7% | White et al. |
+| *VGG16* | TrashNet | 92.8% | 92.7% | 92.8% | 92.7% | White et al.  |
+| *AlexNet* | TrashNet | 78.4% | 78.6% | 78.4% | 78.2% | White et al. |
+| *SVM + SIFT* (Baseline) | TrashNet | 63.0% | 59.0% | 60.0% | - | Thung & Yang  |
 
 > **Nota:** Las precisiones superiores al 95% en la literatura generalmente involucran técnicas intensivas de *Data Augmentation* para multiplicar artificialmente el tamaño del dataset original. Los campos marcados con "-" indican que la métrica no fue reportada explícitamente en el resumen del estudio.
 
