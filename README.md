@@ -14,6 +14,8 @@ Este proyecto busca automatizar la clasificación de basura en **6 categorías**
 
 Las métricas que se evaluarán para medir el desempeño del modelo serán Accuracy, Precision, Recall y F1 Score.
 
+[TrashNet Dataset en Kaggle](https://www.kaggle.com/datasets/feyzazkefe/trashnet)
+
 ## 2. Estado del Arte
 
 La clasificación de residuos basada en imágenes ha evolucionado desde métodos clásicos de Machine Learning hasta arquitecturas complejas de Deep Learning.
