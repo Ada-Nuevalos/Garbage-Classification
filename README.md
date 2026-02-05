@@ -33,16 +33,18 @@ La clasificación de residuos basada en imágenes ha evolucionado desde métodos
 
 La siguiente tabla resume los resultados reportados en la literatura científica analizada para este problema sobre el mismo dataset o diferentes versiones de este:
 
-| Referencia (Paper) | Modelo / Técnica | Estrategia Clave | Accuracy | Precision | Recall | F1-Score |
-| :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| **Yang & Thung** [2016] | SVM (SIFT) | ML Clásico (Baseline) | 63.00% | - | - | - |
-| **Ozkaya & Seyfi** | GoogleNet + SVM | Fine-tuning + SVM Classifier | 97.86% | - | - | - |
-| **Mao et al.** | **Optimized DenseNet121** | **Genetic Algo. + Data Aug.** | **99.60%** | - | - | - |
-| **White et al.** | WasteNet (DenseNet) | Transfer Learning (Edge) | 97.00% | 97.00% | 97.00% | 97.00% |
-| **Alkılınç et al.** | Weighted Ensemble | Ensemble (ResNet+ConvNeXt) | 96.00% | 94.00% | 97.00% | 95.00% |
-| **Qiu et al.** | CE-EfficientNetV2 | Channel Efficient Attention | 96.50% | - | - | - |
-| **Shukurov** | ResNeXt50 | Fine-tuning + Adam Opt. | 95.00% | - | - | - |
-| **Buchade & Bhoite** | MobileNetV2 | Transfer Learning (Ligero) | 95.17% | - | - | - |
+| Modelo | Dataset | Accuracy | Precision | Recall | F1-Score | Referencia |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| *WasteNet* (DenseNet modificado) | TrashNet | *97.0%* | 97.0% | 97.0% | 97.0% | White et al. [Source 3] |
+| *GoogleNet + SVM* | TrashNet | *97.86%* | - | - | - | Özkaya et al. [Source 2] |
+| *Ensemble (Weighted Avg)* | TrashNet | 96.0% | 94.0% | 97.0% | 95.0% | Alkılınç et al. [Source 9] |
+| *CE-EfficientNetV2* | TrashNet | 96.5% | - | - | - | Qiu et al. [Source 4] |
+| *MobileNetV2* | TrashNet | 95.17% | - | - | - | Buchade et al. [Source 5] |
+| *DenseNet169* | TrashNet | 95.3% | 95.4% | 95.3% | 95.3% | White et al. [Source 3] |
+| *ResNet50* | TrashNet | 93.7% | 93.7% | 93.7% | 93.7% | White et al. [Source 3] |
+| *VGG16* | TrashNet | 92.8% | 92.7% | 92.8% | 92.7% | White et al. [Source 3] |
+| *AlexNet* | TrashNet | 78.4% | 78.6% | 78.4% | 78.2% | White et al. [Source 3] |
+| *SVM + SIFT* (Baseline) | TrashNet | 63.0% | 59.0% | 60.0% | - | Thung & Yang [Source 8] |
 
 > **Nota:** Las precisiones superiores al 95% en la literatura generalmente involucran técnicas intensivas de *Data Augmentation* para multiplicar artificialmente el tamaño del dataset original. Los campos marcados con "-" indican que la métrica no fue reportada explícitamente en el resumen del estudio.
 
