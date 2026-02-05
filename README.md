@@ -68,6 +68,10 @@ garbage-classification-project/
 ├── src/                      # Scripts de utilidad y funciones auxiliares
 │   └── __init__.py
 │
+├── State_of_the_Art_references  # Papers de referencia (Estado del Arte)
+│
+├── code_example   # Otros notebooks de ejemplo (Estado del Arte)
+│
 ├── README.md                 # Documentación del proyecto
 └── requirements.txt          # Dependencias del entorno
 
