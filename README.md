@@ -3,15 +3,16 @@
 **Asignatura:** Aprendizaje Profundo 
 
 **Autores:** Carlos Gómez Sáez y Ada Nuévalos Gadea
+
 ---
 
 ## 1. Descripción del Problema
 
 La gestión eficiente de residuos es un desafío global crítico para la sostenibilidad ambiental. La clasificación manual en plantas de reciclaje es costosa, lenta y propensa a errores humanos. 
 
-Este proyecto busca automatizar la clasificación de basura en **6 categorías** (cartón, vidrio, metal, papel, plástico y basura general) utilizando técnicas de Visión por Computador y Deep Learning. Para ello, se utiliza el dataset público **Garbage Classification**.
+Este proyecto busca automatizar la clasificación de basura en **6 categorías** (cartón, vidrio, metal, papel, plástico y basura general) utilizando técnicas de Visión por Computador y Deep Learning. Para ello, se utiliza el dataset público **Garbage Classification** disponible en Kaggle.
 
-## 2. Estado del Arte (State of the Art)
+## 2. Estado del Arte
 
 La clasificación de residuos basada en imágenes ha evolucionado desde métodos clásicos de Machine Learning hasta arquitecturas complejas de Deep Learning.
 
@@ -54,8 +55,6 @@ El repositorio está organizado siguiendo una estructura estándar de ciencia de
 ```text
 garbage-classification-project/
 │
-├── data/
-│   └── raw/                  # Contiene el dataset TrashNet descomprimido
 │
 ├── models/                   # Definición de arquitecturas de modelos (Entregas futuras)
 │   └── __init__.py
