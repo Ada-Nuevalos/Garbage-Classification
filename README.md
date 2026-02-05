@@ -18,7 +18,7 @@ La clasificación de residuos basada en imágenes ha evolucionado desde métodos
 
 ### Evolución de las técnicas:
 
-1.  **Enfoques Clásicos (Machine Learning):** Los trabajos pioneros, como el de los creadores del dataset (*Yang & Thung*), utilizaron extracción de características manuales (SIFT, HOG) junto con clasificadores como *Support Vector Machines* (SVM). Estos métodos demostraron ser robustos pero limitados en su capacidad de generalización frente a variaciones de fondo e iluminación, alcanzando precisiones en torno al 63%.
+1.  **Enfoques Clásicos (Machine Learning):** Los trabajos pioneros utilizaron extracción de características manuales (SIFT, HOG) junto con clasificadores como *Support Vector Machines* (SVM). Estos métodos demostraron ser robustos pero limitados en su capacidad de generalización frente a variaciones de fondo e iluminación, alcanzando precisiones en torno al 63%.
 
 2.  **Redes Convolucionales (CNNs) desde cero:** La implementación de CNNs simples (tipo AlexNet) entrenadas desde cero sobre este dataset pequeño (~2500 imágenes) suele sufrir de *overfitting*, obteniendo resultados pobres si no se ajustan correctamente los hiperparámetros y no se usan técnicas de regularización.
 
