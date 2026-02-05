@@ -1,6 +1,7 @@
 # Clasificación de Residuos mediante Deep Learning
 
 **Asignatura:** Aprendizaje Profundo 
+
 **Autores:** Carlos Gómez Sáez y Ada Nuévalos Gadea
 ---
 
