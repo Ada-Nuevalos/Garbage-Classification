@@ -10,7 +10,7 @@
 
 La gestión eficiente de residuos es un desafío global crítico para la sostenibilidad ambiental. La clasificación manual en plantas de reciclaje es costosa, lenta y propensa a errores humanos. 
 
-Este proyecto busca automatizar la clasificación de basura en **6 categorías** (cartón, vidrio, metal, papel, plástico y basura general) utilizando técnicas de Visión por Computador y Deep Learning. Para ello, se utiliza el dataset público **Garbage Classification** disponible en Kaggle.
+Este proyecto busca automatizar la clasificación de basura en **6 categorías** (cartón, vidrio, metal, papel, plástico y basura general) utilizando técnicas de Visión por Computador y Deep Learning. Para ello, se utiliza el dataset público **TrashNet** disponible en Kaggle.
 
 ## 2. Estado del Arte
 
@@ -31,7 +31,7 @@ La clasificación de residuos basada en imágenes ha evolucionado desde métodos
 
 ### Tabla Comparativa de Modelos (Benchmark en TrashNet)
 
-La siguiente tabla resume los resultados reportados en la literatura científica analizada para este problema sobre el mismo dataset o diferentes versiones de este:
+La siguiente tabla resume los resultados reportados en la literatura científica analizada para este problema sobre el dataset TrashNet (o variantes aumentadas del mismo):
 
 | Modelo | Dataset | Accuracy | Precision | Recall | F1-Score | Referencia |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
