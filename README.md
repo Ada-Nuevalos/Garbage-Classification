@@ -12,7 +12,7 @@ La gestión eficiente de residuos es un desafío global crítico para la sosteni
 
 Este proyecto busca automatizar la clasificación de basura en **6 categorías** (cartón, vidrio, metal, papel, plástico y basura general) utilizando técnicas de Visión por Computador y Deep Learning. Para ello, se utiliza el dataset público **TrashNet** disponible en Kaggle. 
 
-Las métricas que se evaluarán para medir el desempeño del modelo serán Accuracy, Precision, Recall y F1 Score.
+Las métricas que se evaluarán para medir el desempeño del modelo serán **Accuracy, Precision, Recall y F1 Score**.
 
 [TrashNet Dataset en Kaggle](https://www.kaggle.com/datasets/feyzazkefe/trashnet)
 
