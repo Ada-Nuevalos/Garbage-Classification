@@ -15,39 +15,37 @@ Este proyecto busca automatizar la clasificación de basura en **6 categorías**
 Las métricas que se evaluarán para medir el desempeño del modelo serán **Accuracy, Precision, Recall y F1 Score**.
 
 [TrashNet Dataset en Kaggle](https://www.kaggle.com/datasets/feyzazkefe/trashnet)
-<div align="center">
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="data/raw/metal/metal1.jpg" width="120"><br>
+      <b>Metal</b>
+    </td>
+    <td align="center">
+      <img src="data/raw/cardboard/cardboard1.jpg" width="120"><br>
+      <b>Cardboard</b>
+    </td>
+    <td align="center">
+      <img src="data/raw/paper/paper1.jpg" width="120"><br>
+      <b>Paper</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="data/raw/plastic/plastic1.jpg" width="120"><br>
+      <b>Plastic</b>
+    </td>
+    <td align="center">
+      <img src="data/raw/trash/trash1.jpg" width="120"><br>
+      <b>Trash</b>
+    </td>
+    <td align="center">
+      <img src="data/raw/glass/glass1.jpg" width="120"><br>
+      <b>Glass</b>
+    </td>
+  </tr>
+</table>
 
-<figure style="display:inline-block; margin: 10px;">
-  <img src="data/raw/metal/metal1.jpg" width="120">
-  <figcaption>Metal</figcaption>
-</figure>
-
-<figure style="display:inline-block; margin: 10px;">
-  <img src="data/raw/cardboard/cardboard1.jpg" width="120">
-  <figcaption>Cardboard</figcaption>
-</figure>
-
-<figure style="display:inline-block; margin: 10px;">
-  <img src="data/raw/paper/paper1.jpg" width="120">
-  <figcaption>Paper</figcaption>
-</figure>
-
-<figure style="display:inline-block; margin: 10px;">
-  <img src="data/raw/plastic/plastic1.jpg" width="120">
-  <figcaption>Plastic</figcaption>
-</figure>
-
-<figure style="display:inline-block; margin: 10px;">
-  <img src="data/raw/trash/trash1.jpg" width="120">
-  <figcaption>Trash</figcaption>
-</figure>
-
-<figure style="display:inline-block; margin: 10px;">
-  <img src="data/raw/glass/glass1.jpg" width="120">
-  <figcaption>Glass</figcaption>
-</figure>
-
-</div>
 
 
 ## 2. Estado del Arte
