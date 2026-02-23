@@ -161,7 +161,24 @@ $$F1_c = 2 \cdot \frac{\text{Precision}_c \cdot \text{Recall}_c}{\text{Precision
 | **CNN Simple** | x | Train |  |  |  | |
 | | | Val | |  |  | |
 | | | Test |  |  |  | |
-## 5. Referencias
+
+## 5. Estructura del Proyecto
+
+El repositorio está organizado de la siguiente manera:
+
+```text
+├── data/                   # Carpeta para almacenar el dataset (raw y processed)
+├── notebooks/              # Notebooks de Jupyter para experimentación
+│   └── 1_EDA_Garbage_Classification.ipynb  # Entrega 1: Carga de datos y Análisis Exploratorio
+├── models/                 # Definición de arquitecturas de modelos (.py)
+├── src/                    # Código fuente modular
+│   └── utils/              # Funciones auxiliares de carga y visualización
+├── sota_references/        # Papers de referencia del estado del arte
+├── reports/                # Informes y figuras generadas
+├── requirements.txt        # Dependencias del proyecto
+└── README.md               # Información general del proyecto
+```
+## 6. Referencias
 
 Se presentan las referencias utilizadas, cada una acompañada de una frase que sintetiza su contribución al campo.
 
@@ -195,21 +212,6 @@ Se presentan las referencias utilizadas, cada una acompañada de una frase que s
 [10] M. Nahiduzzaman, M. F. Ahamed, M. Naznine, M. J. Karim et al., *"An Automated Waste Classification System Using Deep Learning Techniques,"* Knowledge-Based Systems, vol. 313, 112840, 2025.
 - Sistema automatizado que aplica técnicas profundas para clasificación de residuos a gran escala, enfocado en la sostenibilidad ambiental y la eficiencia del reciclaje con aplicaciones en entornos industriales.
 
-## 6. Estructura del Proyecto
 
-El repositorio está organizado de la siguiente manera:
 
-```text
-├── data/                   # Carpeta para almacenar el dataset (raw y processed)
-├── notebooks/              # Notebooks de Jupyter para experimentación
-│   └── 1_EDA_Garbage_Classification.ipynb  # Entrega 1: Carga de datos y Análisis Exploratorio
-├── models/                 # Definición de arquitecturas de modelos (.py)
-├── src/                    # Código fuente modular
-│   └── utils/              # Funciones auxiliares de carga y visualización
-├── sota_references/        # Papers de referencia del estado del arte
-├── reports/                # Informes y figuras generadas
-├── requirements.txt        # Dependencias del proyecto
-└── README.md               # Información general del proyecto
-
-```
 
