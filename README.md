@@ -33,23 +33,13 @@ Para este proyecto, utilizamos el dataset estándar de referencia en la literatu
 | Propiedad | Valor |
 | :--- | :--- |
 | Imágenes totales | 2.527 |
-| Resolución original | Variable (aprox. 512 x 384 px) |
+| Resolución original | 512 x 384 px |
 | Resolución preprocesada | 224 x 224 px |
 | Canales de color | 3 (RGB) |
 | Tipo de dato (X) | `float32`, normalizado [0, 1] |
 | Shape de X | `(2527, 224, 224, 3)` |
 | Shape de y | `(2527,)` — enteros codificados [0..5] |
-| Memoria de X | ~1.52 GB |
 | Ratio de desbalanceo | 4.34:1 (paper: 594 vs trash: 137) |
-
-### Dificultad del Problema
-
-Aunque TrashNet es un dataset de tamaño reducido, presenta retos no triviales:
-
-1.  **Desbalanceo significativo de clases:** La clase mayoritaria (paper, 594 imágenes) tiene 4.34 veces más muestras que la minoritaria (trash, 137 imágenes). Esto sesga los modelos hacia las clases frecuentes y dificulta la clasificación de "trash".
-2.  **Similitud visual entre categorías:** Materiales como plástico transparente y vidrio, o ciertos cartones y papeles, comparten características visuales (color, textura, forma) que confunden a los clasificadores.
-3.  **Variabilidad intra-clase:** Dentro de cada categoría existe gran diversidad (una botella de plástico vs. un envase de yogur vs. una bolsa), lo que requiere modelos capaces de aprender representaciones abstractas.
-4.  **Dataset pequeño:** Con solo ~2.500 imágenes, los modelos profundos tienden a sobreajustar, obligando a emplear técnicas de regularización y data augmentation.
 
 ### Muestras del Dataset
 
@@ -87,10 +77,6 @@ A continuación se muestran ejemplos representativos de cada una de las 6 catego
   </tr>
 </table>
 
-### Estructura de Datos (EDA)
-El análisis exploratorio de los datos se encuentra en el notebook `notebooks/1_EDA_Garbage_Classification.ipynb`. En este notebook se cargan los datos siguiendo los requisitos de la asignatura:
-*   **`X`**: Variable que contiene los tensores de las imágenes procesadas.
-*   **`y`**: Variable que contiene las etiquetas de las clases.
 
 ## 2. Estado del Arte (SOTA)
 
@@ -211,4 +197,5 @@ El repositorio está organizado de la siguiente manera:
 ├── reports/                # Informes y figuras generadas
 ├── requirements.txt        # Dependencias del proyecto
 └── README.md               # Información general del proyecto
+
 ```
