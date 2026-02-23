@@ -147,8 +147,21 @@ $$\text{Recall}_c = \frac{TP_c}{TP_c + FN_c}$$
 $$F1_c = 2 \cdot \frac{\text{Precision}_c \cdot \text{Recall}_c}{\text{Precision}_c + \text{Recall}_c} \qquad \Rightarrow \qquad F1_{\text{macro}} = \frac{1}{C}\sum_{c=1}^{C} F1_c$$
 
 *   **Confusion Matrix:** Representación visual que muestra dónde se concentran los errores del modelo (ej. confundir plástico con vidrio), permitiendo diagnosticar debilidades por clase.
+## 4. Resultados Experimentales
+### Tabla Comparativa de Modelos
 
-## 4. Referencias
+| Modelo | Nº Parámetros | Split | Accuracy | Precision (Macro) | Recall (Macro) | F1 (Macro) |
+|--------|--------------|--------|----------|-------------------|---------------|------------|
+| **Regresión Logística** | x | Train |  |  |  | |
+| | | Val |  |  |  | |
+| | | Test |  |  |  | |
+| **SVM** | x | Train |  |  |  | |
+| | | Val | |  |  | |
+| | | Test |  |  |  | |
+| **CNN Simple** | x | Train |  |  |  | |
+| | | Val | |  |  | |
+| | | Test |  |  |  | |
+## 5. Referencias
 
 Se presentan las referencias utilizadas, cada una acompañada de una frase que sintetiza su contribución al campo.
 
@@ -182,7 +195,7 @@ Se presentan las referencias utilizadas, cada una acompañada de una frase que s
 [10] M. Nahiduzzaman, M. F. Ahamed, M. Naznine, M. J. Karim et al., *"An Automated Waste Classification System Using Deep Learning Techniques,"* Knowledge-Based Systems, vol. 313, 112840, 2025.
 - Sistema automatizado que aplica técnicas profundas para clasificación de residuos a gran escala, enfocado en la sostenibilidad ambiental y la eficiencia del reciclaje con aplicaciones en entornos industriales.
 
-## 5. Estructura del Proyecto
+## 6. Estructura del Proyecto
 
 El repositorio está organizado de la siguiente manera:
 
@@ -199,3 +212,4 @@ El repositorio está organizado de la siguiente manera:
 └── README.md               # Información general del proyecto
 
 ```
+
