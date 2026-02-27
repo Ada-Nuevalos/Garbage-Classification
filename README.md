@@ -172,14 +172,25 @@ El repositorio está organizado de la siguiente manera:
 
 ```text
 ├── data/                   # Carpeta para almacenar el dataset (raw y processed)
+│   └── raw/
+│   └── processed
+│       
 ├── notebooks/              # Notebooks de Jupyter para experimentación
-│   └── 1_EDA_Garbage_Classification.ipynb  # Entrega 1: Carga de datos y Análisis Exploratorio
+│   └── 1_EDA_Garbage_Classification.ipynb  
+│   └── 2.1.Modelo_Lineal_Garbage_Classification.ipynb  
+│   └── 2.2.Modelo_ML_Garbage_Classification.ipynb
+│   └── 2.3.Modelo_Red_Neuronal_Simple.ipynb 
+│ 
 ├── models/                 # Definición de arquitecturas de modelos (.py)
+│   └── simple_cnn.py      
+│ 
 ├── src/                    # Código fuente modular
 │   └── utils/              # Funciones auxiliares de carga y visualización
+│
 ├── sota_references/        # Papers de referencia del estado del arte
 ├── reports/                # Informes y figuras generadas
 ├── requirements.txt        # Dependencias del proyecto
+├── code_exmaple            # Carpeta con código de ejemplo de otros proyectos (SOTA)
 └── README.md               # Información general del proyecto
 ```
 
@@ -226,3 +237,4 @@ Se presentan las referencias utilizadas, cada una acompañada de una frase que s
 [10] M. Nahiduzzaman, M. F. Ahamed, M. Naznine, M. J. Karim et al., _"An Automated Waste Classification System Using Deep Learning Techniques,"_ Knowledge-Based Systems, vol. 313, 112840, 2025.
 
 - Sistema automatizado que aplica técnicas profundas para clasificación de residuos a gran escala, enfocado en la sostenibilidad ambiental y la eficiencia del reciclaje con aplicaciones en entornos industriales.
+
