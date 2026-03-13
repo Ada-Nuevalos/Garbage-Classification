@@ -8,7 +8,7 @@ Arquitectura:
     Conv2D(6, 3x3, relu, same) → GAP → Dense(6, softmax)
 
 Parámetros: (3×3×3×6) + 6 + (6×6) + 6 = 162 + 6 + 36 + 6 = 210
-Este es el modelo más tonto posible con algo de sentido:
+Este es el modelo más simple posible con algo de sentido:
 un único filtro por clase, GAP que colapsa cada mapa a un escalar,
 y una capa densa de salida.
 """
