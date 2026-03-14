@@ -2,13 +2,13 @@
 Modelo D4 — EfficientNetV2B0 Minimal (Serie descendente, paso 4)
 ================================================================
 Proyecto : Clasificación Automática de Residuos - TrashNet (6 clases)
-Asignatura: Aprendizaje Profundo — Valero Laparra
+Asignatura: Aprendizaje Profundo
 
 Primer paso de la serie descendente con Transfer Learning.
 Backbone EfficientNetV2B0 pre-entrenado en ImageNet, CONGELADO.
 Cabeza absolutamente mínima: solo GAP → Softmax.
 
-Siguiendo la jerarquía de Valero para reducir complejidad:
+Siguiendo la jerarquía para reducir complejidad:
 empezamos quitando todas las capas densas intermedias.
 
 Arquitectura:
