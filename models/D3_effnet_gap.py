@@ -2,7 +2,7 @@
 Modelo D3 — EfficientNetV2B0 GAP (Serie descendente, paso 3)
 ============================================================
 Proyecto : Clasificación Automática de Residuos - TrashNet (6 clases)
-Asignatura: Aprendizaje Profundo — Valero Laparra
+Asignatura: Aprendizaje Profundo 
 
 Cambio respecto a D4:
     Añadimos una capa Dense(6) explícita antes del softmax,
