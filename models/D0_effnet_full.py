@@ -2,7 +2,7 @@
 Modelo D0 — EfficientNetV2B0 Full (Techo de la serie descendente)
 =================================================================
 Proyecto : Clasificación Automática de Residuos - TrashNet (6 clases)
-Asignatura: Aprendizaje Profundo — Valero Laparra
+Asignatura: Aprendizaje Profundo
 
 El modelo más complejo de la serie descendente.
 Backbone EfficientNetV2B0 completamente descongelado desde el inicio.
