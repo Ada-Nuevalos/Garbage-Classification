@@ -2,7 +2,7 @@
 Modelo D1 — EfficientNetV2B0 Top (Serie descendente, paso 1)
 ============================================================
 Proyecto : Clasificación Automática de Residuos - TrashNet (6 clases)
-Asignatura: Aprendizaje Profundo — Valero Laparra
+Asignatura: Aprendizaje Profundo
 
 Cambio respecto a D2:
     Ampliamos la capa Dense a 256 neuronas.
