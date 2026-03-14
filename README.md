@@ -204,7 +204,7 @@ Para construirla calculamos tres métricas a partir del F1 macro de cada modelo.
 
 La forma de tijera es clara en la Serie A: el bias² domina en los modelos simples y decrece al aumentar la complejidad, mientras que la varianza crece progresivamente indicando overfitting. La Serie D rompe completamente este patrón gracias al preentrenamiento en ImageNet, logrando bias² y varianza bajos de forma simultánea en todos sus modelos.
 
-Como modelo definitivo elegimos **D4-Minimal**, que con solo las capas finales descongeladas alcanza un error total de 0.095, apenas 0.009 por encima del mejor modelo (D0-Full con 0.086). En un problema donde el dominio visual es cercano a ImageNet, descongelar la red completa aporta un beneficio marginal que no justifica el coste adicional de entrenamiento, haciendo de D4 la opción más eficiente en términos de rendimiento y coste. Además, D4 presenta un gran rendimiento en el resto de métricas, con un F1 macro de 0.905, una precisión de 0.900 y un recall de 0.917 en test.
+Como modelo definitivo elegimos **D4-Minimal**, que con solo las capas finales descongeladas alcanza un error total de 0.095, apenas 0.009 por encima del mejor modelo (D0-Full con 0.086). En este caso descngelar la red completa aporta un beneficio marginal que no justifica el coste adicional de entrenamiento, haciendo de D4 la opción más eficiente en términos de rendimiento y coste. Además, D4 presenta un gran rendimiento en el resto de métricas, con un F1 macro de 0.905, una precisión de 0.900 y un recall de 0.917 en test.
 
 ---
 
