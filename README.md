@@ -206,6 +206,11 @@ La forma de tijera es clara en la Serie A: el bias² domina en los modelos simpl
 
 Como modelo definitivo elegimos **D4-Minimal**, que con solo las capas finales descongeladas alcanza un error total de 0.095, apenas 0.009 por encima del mejor modelo (D0-Full con 0.086). En este caso descngelar la red completa aporta un beneficio marginal que no justifica el coste adicional de entrenamiento, haciendo de D4 la opción más eficiente en términos de rendimiento y coste. Además, D4 presenta un gran rendimiento en el resto de métricas, con un F1 macro de 0.905, una precisión de 0.900 y un recall de 0.917 en test.
 
+| Modelo | Nº Parámetros | Split | Accuracy | Precision (Macro) | Recall (Macro) | F1 (Macro) |
+| :---------------------- | ------------: | :---- | -------: | ----------------: | -------------: | ---------: |
+| **D4 — EffNet Minimal** | 5,926,998 | Train | 0.9893 | 0.9872 | 0.9910 | 0.9889 |
+| | | Val | 0.9182 | 0.9076 | 0.9203 | 0.9098 |
+| | | Test | 0.9211 | 0.8995 | 0.9172 | **0.9054** |
 ---
 
 ## 5. Estructura del Proyecto
