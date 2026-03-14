@@ -193,6 +193,21 @@ $$F1_c = 2 \cdot \frac{\text{Precision}_c \cdot \text{Recall}_c}{\text{Precision
 | | | Val | 0.9182 | 0.9076 | 0.9203 | 0.9098 |
 | | | Test | 0.9211 | 0.8995 | 0.9172 | **0.9054** |
 
+---
+
+## **Gráfica de la tijera — Bias² y Varianza**
+![Gráfica Resultado Modelos](reports/grafica_tijera.jpeg)
+
+Realizamos esta gráfica con el objetivo de visualizar el trade-off bias-varianza a lo largo de todas las arquitecturas probadas, ordenadas por complejidad creciente. Comparamos dos series: la Serie A con CNNs entrenadas desde cero (de A1-Simple a A5-Frontier) y la Serie D con EfficientNet usando transfer learning (de D4-Minimal a D0-Full).
+
+Para construirla calculamos tres métricas a partir del F1 macro de cada modelo. El **Bias²** como `1 − F1_train`, que refleja cuánto le cuesta al modelo aprender los propios datos de entrenamiento. La **Varianza** como `max(0, F1_train − F1_test)`, que mide cuánto empeora el modelo al enfrentarse a datos no vistos. Y el **Error total** como `1 − F1_test`, que representa el rendimiento real del modelo. Elegimos F1 macro en lugar del loss porque al tener 6 clases potencialmente desbalanceadas, esta métrica pondera igual todas las clases y es más representativa del rendimiento real.
+
+La forma de tijera es clara en la Serie A: el bias² domina en los modelos simples y decrece al aumentar la complejidad, mientras que la varianza crece progresivamente indicando overfitting. La Serie D rompe completamente este patrón gracias al preentrenamiento en ImageNet, logrando bias² y varianza bajos de forma simultánea en todos sus modelos.
+
+Como modelo definitivo elegimos **D4-Minimal**, que con solo las capas finales descongeladas alcanza un error total de 0.095, apenas 0.009 por encima del mejor modelo (D0-Full con 0.086). En un problema donde el dominio visual es cercano a ImageNet, descongelar la red completa aporta un beneficio marginal que no justifica el coste adicional de entrenamiento, haciendo de D4 la opción más eficiente en términos de rendimiento y coste. Además, D4 presenta un gran rendimiento en el resto de métricas, con un F1 macro de 0.905, una precisión de 0.900 y un recall de 0.917 en test.
+
+---
+
 ## 5. Estructura del Proyecto
 
 El repositorio está organizado de la siguiente manera:
