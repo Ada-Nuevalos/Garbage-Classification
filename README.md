@@ -213,27 +213,61 @@ Como modelo definitivo elegimos **D4-Minimal**, que con solo las capas finales d
 El repositorio está organizado de la siguiente manera:
 
 ```text
-├── data/                   # Carpeta para almacenar el dataset (raw y processed)
-│   └── raw/
-│   └── processed
-│       
-├── notebooks/              # Notebooks de Jupyter para experimentación
-│   └── 1_EDA_Garbage_Classification.ipynb  
-│   └── 2.1.Modelo_Lineal_Garbage_Classification.ipynb  
-│   └── 2.2.Modelo_ML_Garbage_Classification.ipynb
-│   └── 2.3.Modelo_Red_Neuronal_Simple.ipynb 
-│ 
-├── models/                 # Definición de arquitecturas de modelos (.py)
-│   └── simple_cnn.py      
-│ 
-├── src/                    # Código fuente modular
-│   └── utils/              # Funciones auxiliares de carga y visualización
+Garbage-Classification/
 │
-├── sota_references/        # Papers de referencia del estado del arte
-├── reports/                # Informes y figuras generadas
-├── requirements.txt        # Dependencias del proyecto
-├── code_exmaple            # Carpeta con código de ejemplo de otros proyectos (SOTA)
-└── README.md               # Información general del proyecto
+├── data/                             # Dataset del proyecto
+│   ├── raw/                          # Imágenes originales del TrashNet organizadas por clase
+│   │   ├── cardboard/                #   403 imágenes de cartón
+│   │   ├── glass/                    #   501 imágenes de vidrio
+│   │   ├── metal/                    #   410 imágenes de metal
+│   │   ├── paper/                    #   594 imágenes de papel
+│   │   ├── plastic/                  #   482 imágenes de plástico
+│   │   └── trash/                    #   137 imágenes de basura general
+│   └── processed/
+│       └── trashnet_224x224.npz      # Dataset preprocesado (224×224 px, float32 normalizado)
+│
+├── notebooks/                        # Notebooks de experimentación progresiva
+│   ├── 1_EDA_Garbage_Classification.ipynb          # Análisis exploratorio del dataset
+│   ├── 2.1.Modelo_Lineal_Garbage_Classification.ipynb  # Baseline con Regresión Logística + HOG
+│   ├── 2.2.Modelo_ML_Garbage_Classification.ipynb  # Clasificador SVM + HOG
+│   ├── 2.3.Modelo_Red_Neuronal_Simple.ipynb        # Red neuronal densa simple (A1)
+│   ├── 3.A2_cnn_small.ipynb                        # CNN pequeña desde cero (~1K params)
+│   ├── 3.A3_cnn_medium.ipynb                       # CNN mediana desde cero (~20K params)
+│   ├── 3.A4_cnn_large.ipynb                        # CNN grande desde cero (~95K params)
+│   ├── 3.A5_cnn_frontier.ipynb                     # CNN frontera desde cero (~424K params)
+│   ├── D0_effnet_full.ipynb                        # EfficientNetV2 — fine-tuning completo
+│   ├── D1_effnet_top.ipynb                         # EfficientNetV2 — solo capas superiores
+│   ├── D2_effnet_head.ipynb                        # EfficientNetV2 — cabeza personalizada
+│   ├── D3_effnet_gap.ipynb                         # EfficientNetV2 — con Global Avg Pooling
+│   └── D4_effnet_minimal.ipynb                     # EfficientNetV2 — mínimo descongelado (modelo final)
+│
+├── models/                           # Definición de arquitecturas como módulos Python reutilizables
+│   ├── A1_simple_cnn.py              # Red neuronal densa simple
+│   ├── A2_cnn_small.py              # CNN pequeña con pocas capas convolucionales
+│   ├── A3_cnn_medium.py             # CNN mediana con regularización
+│   ├── A4_cnn_large.py              # CNN grande con BatchNorm y Dropout
+│   ├── A5_D5_cnn_frontier.py        # CNN frontera (mayor capacidad entrenada desde cero)
+│   ├── D0_effnet_full.py            # EfficientNetV2B0 — todos los pesos descongelados
+│   ├── D1_effnet_top.py             # EfficientNetV2B0 — bloque superior descongelado
+│   ├── D2_effnet_head.py            # EfficientNetV2B0 — cabeza densa personalizada
+│   ├── D3_effnet_gap.py             # EfficientNetV2B0 — con capa GAP adicional
+│   └── D4_effnet_minimal.py         # EfficientNetV2B0 — solo capas finales descongeladas
+│
+├── scr/                             # Código fuente modular compartido entre notebooks
+│   ├── __init__.py
+│   └── utils.py                     # Funciones auxiliares: carga de datos, split, callbacks, visualización
+│
+├── code_exmaple/                    # Notebooks de referencia de otros proyectos (SOTA externo)
+│   ├── garbage-classification-cnn.ipynb                    # Ejemplo CNN con Keras/TensorFlow
+│   ├── garbage-classification.ipynb                        # Ejemplo clasificación básica
+│   └── pytorch-garbage-classification-95-accuracy.ipynb   # Ejemplo con PyTorch (95% accuracy)
+│
+├── sota_references/                 # Papers y documentación del estado del arte consultada
+│   └── README.md                    # Índice y resumen de los artículos de referencia
+│
+├── reports/                         # Figuras, gráficas e informes generados durante el proyecto
+├── requirements.txt                 # Dependencias Python del proyecto
+└── README.md                        # Documentación general del proyecto
 ```
 
 ## 6. Referencias
