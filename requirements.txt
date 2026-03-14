@@ -2,8 +2,15 @@
 numpy>=1.24.0,<2.0.0
 pandas>=2.0.0,<3.0.0
 
-# Deep Learning Framework
+# Deep Learning Framework (TensorFlow/Keras)
 tensorflow>=2.13.0,<3.0.0
+
+# Machine Learning
+scikit-learn>=1.3.0,<2.0.0
+
+# Image Processing
+scikit-image>=0.21.0,<1.0.0
+Pillow>=10.0.0,<12.0.0
 
 # Visualization Libraries
 matplotlib>=3.7.0,<4.0.0
@@ -12,6 +19,10 @@ seaborn>=0.12.0,<1.0.0
 # Jupyter Environment (for running notebooks)
 jupyter>=1.0.0
 ipykernel>=6.25.0
+
+# PyTorch (optional, only required for code_exmaple/pytorch-garbage-classification-95-accuracy.ipynb)
+# torch>=2.0.0
+# torchvision>=0.15.0
 
 # Google Colab utilities (optional, for Colab compatibility)
 # google-colab  # Uncomment if running in Google Colab
