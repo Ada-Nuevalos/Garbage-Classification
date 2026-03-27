@@ -154,46 +154,125 @@ $$F1_c = 2 \cdot \frac{\text{Precision}_c \cdot \text{Recall}_c}{\text{Precision
 
 ### Tabla Comparativa de Modelos
 
-| Modelo | Nº Parámetros | Split | Accuracy | Precision (Macro) | Recall (Macro) | F1 (Macro) |
-| :---------------------- | ------------: | :---- | -------: | ----------------: | -------------: | ---------: |
-| **Regresión Logística** | 7,782 | Train | 0.9955 | 0.9946 | 0.9965 | 0.9955 |
-| | | Val | 0.5013 | 0.5000 | 0.5065 | 0.5023 |
-| | | Test | 0.6000 | 0.5864 | 0.5802 | 0.5815 |
-| **SVM** | 2,182,851 | Train | 0.9972 | 0.9975 | 0.9975 | 0.9975 |
-| | | Val | 0.6491 | 0.6639 | 0.6209 | 0.6347 |
-| | | Test | 0.7184 | 0.7455 | 0.6856 | 0.7035 |
-| **A1 — CNN Simple** | 210 | Train | 0.4717 | 0.4138 | 0.4100 | 0.3937 |
-| | | Val | 0.4802 | 0.4406 | 0.4138 | 0.4030 |
-| | | Test | 0.4921 | 0.4257 | 0.4326 | 0.4150 |
-| **A2 — CNN Small** | 1,094 | Train | 0.6400 | 0.6300 | 0.5700 | 0.5700 |
-| | | Val | 0.6200 | 0.6500 | 0.5500 | 0.5600 |
-| | | Test | 0.6100 | 0.6600 | 0.5600 | 0.5700 |
-| **A3 — CNN Medium** | 19,782 | Train | 0.8360 | 0.8268 | 0.8121 | 0.8184 |
-| | | Val | 0.7414 | 0.7149 | 0.6954 | 0.7010 |
-| | | Test | 0.7263 | 0.7114 | 0.6884 | 0.6973 |
-| **A4 — CNN Large** | 94,918 | Train | 0.8343 | 0.8146 | 0.8346 | 0.8127 |
-| | | Val | 0.7546 | 0.7480 | 0.7558 | 0.7301 |
-| | | Test | 0.7816 | 0.7643 | 0.7741 | 0.7578 |
-| **A5 — CNN Frontier** | 424,006 | Train | 0.9021 | 0.8971 | 0.8966 | 0.8949 |
-| | | Val | 0.8100 | 0.7944 | 0.7964 | 0.7917 |
-| | | Test | 0.8395 | 0.8354 | 0.8081 | 0.8140 |
-| **D0 — EffNet Full** | 6,253,910 | Train | 0.9960 | 0.9961 | 0.9968 | 0.9964 |
-| | | Val | 0.9314 | 0.9280 | 0.9300 | 0.9253 |
-| | | Test | 0.9316 | 0.9199 | 0.9121 | 0.9139 |
-| **D1 — EffNet Top** | 6,248,790 | Train | 0.9864 | 0.9747 | 0.9886 | 0.9810 |
-| | | Val | 0.9050 | 0.8882 | 0.9069 | 0.8895 |
-| | | Test | 0.9132 | 0.8815 | 0.9026 | 0.8874 |
-| **D2 — EffNet Head** | 6,084,054 | Train | 0.9853 | 0.9713 | 0.9877 | 0.9786 |
-| | | Val | 0.9077 | 0.8889 | 0.9107 | 0.8950 |
-| | | Test | 0.9079 | 0.8797 | 0.9040 | 0.8871 |
-| **D3 — EffNet GAP** | 5,927,040 | Train | 0.9757 | 0.9738 | 0.9342 | 0.9480 |
-| | | Val | 0.9024 | 0.8896 | 0.8421 | 0.8526 |
-| | | Test | 0.9132 | 0.8861 | 0.8344 | 0.8402 |
-| **D4 — EffNet Minimal** | 5,926,998 | Train | 0.9893 | 0.9872 | 0.9910 | 0.9889 |
-| | | Val | 0.9182 | 0.9076 | 0.9203 | 0.9098 |
-| | | Test | 0.9211 | 0.8995 | 0.9172 | **0.9054** |
 
----
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Modelo</th>
+      <th rowspan="2">Nº Parámetros</th>
+      <th colspan="3">Accuracy</th>
+      <th colspan="3">Precision (Macro)</th>
+      <th colspan="3">Recall (Macro)</th>
+      <th colspan="3">F1 (Macro)</th>
+    </tr>
+    <tr>
+      <th>Train</th><th>Val</th><th>Test</th>
+      <th>Train</th><th>Val</th><th>Test</th>
+      <th>Train</th><th>Val</th><th>Test</th>
+      <th>Train</th><th>Val</th><th>Test</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Regresión Logística</b></td>
+      <td>7,782</td>
+      <td>0.9955</td><td>0.5013</td><td>0.6000</td>
+      <td>0.9946</td><td>0.5000</td><td>0.5864</td>
+      <td>0.9965</td><td>0.5065</td><td>0.5802</td>
+      <td>0.9955</td><td>0.5023</td><td>0.5815</td>
+    </tr>
+    <tr>
+      <td><b>SVM</b></td>
+      <td>2,182,851</td>
+      <td>0.9972</td><td>0.6491</td><td>0.7184</td>
+      <td>0.9975</td><td>0.6639</td><td>0.7455</td>
+      <td>0.9975</td><td>0.6209</td><td>0.6856</td>
+      <td>0.9975</td><td>0.6347</td><td>0.7035</td>
+    </tr>
+    <tr>
+      <td><b>A1 — CNN Simple</b></td>
+      <td>210</td>
+      <td>0.4717</td><td>0.4802</td><td>0.4921</td>
+      <td>0.4138</td><td>0.4406</td><td>0.4257</td>
+      <td>0.4100</td><td>0.4138</td><td>0.4326</td>
+      <td>0.3937</td><td>0.4030</td><td>0.4150</td>
+    </tr>
+    <tr>
+      <td><b>A2 — CNN Small</b></td>
+      <td>1,094</td>
+      <td>0.6400</td><td>0.6200</td><td>0.6100</td>
+      <td>0.6300</td><td>0.6500</td><td>0.6600</td>
+      <td>0.5700</td><td>0.5500</td><td>0.5600</td>
+      <td>0.5700</td><td>0.5600</td><td>0.5700</td>
+    </tr>
+    <tr>
+      <td><b>A3 — CNN Medium</b></td>
+      <td>19,782</td>
+      <td>0.8360</td><td>0.7414</td><td>0.7263</td>
+      <td>0.8268</td><td>0.7149</td><td>0.7114</td>
+      <td>0.8121</td><td>0.6954</td><td>0.6884</td>
+      <td>0.8184</td><td>0.7010</td><td>0.6973</td>
+    </tr>
+    <tr>
+      <td><b>A4 — CNN Large</b></td>
+      <td>94,918</td>
+      <td>0.8343</td><td>0.7546</td><td>0.7816</td>
+      <td>0.8146</td><td>0.7480</td><td>0.7643</td>
+      <td>0.8346</td><td>0.7558</td><td>0.7741</td>
+      <td>0.8127</td><td>0.7301</td><td>0.7578</td>
+    </tr>
+    <tr>
+      <td><b>A5 — CNN Frontier</b></td>
+      <td>424,006</td>
+      <td>0.9021</td><td>0.8100</td><td>0.8395</td>
+      <td>0.8971</td><td>0.7944</td><td>0.8354</td>
+      <td>0.8966</td><td>0.7964</td><td>0.8081</td>
+      <td>0.8949</td><td>0.7917</td><td>0.8140</td>
+    </tr>
+    <tr>
+      <td><b>D0 — EffNet Full</b></td>
+      <td>6,253,910</td>
+      <td>0.9960</td><td>0.9314</td><td>0.9316</td>
+      <td>0.9961</td><td>0.9280</td><td>0.9199</td>
+      <td>0.9968</td><td>0.9300</td><td>0.9121</td>
+      <td>0.9964</td><td>0.9253</td><td>0.9139</td>
+    </tr>
+    <tr>
+      <td><b>D1 — EffNet Top</b></td>
+      <td>6,248,790</td>
+      <td>0.9864</td><td>0.9050</td><td>0.9132</td>
+      <td>0.9747</td><td>0.8882</td><td>0.8815</td>
+      <td>0.9886</td><td>0.9069</td><td>0.9026</td>
+      <td>0.9810</td><td>0.8895</td><td>0.8874</td>
+    </tr>
+    <tr>
+      <td><b>D2 — EffNet Head</b></td>
+      <td>6,084,054</td>
+      <td>0.9853</td><td>0.9077</td><td>0.9079</td>
+      <td>0.9713</td><td>0.8889</td><td>0.8797</td>
+      <td>0.9877</td><td>0.9107</td><td>0.9040</td>
+      <td>0.9786</td><td>0.8950</td><td>0.8871</td>
+    </tr>
+    <tr>
+      <td><b>D3 — EffNet GAP</b></td>
+      <td>5,927,040</td>
+      <td>0.9757</td><td>0.9024</td><td>0.9132</td>
+      <td>0.9738</td><td>0.8896</td><td>0.8861</td>
+      <td>0.9342</td><td>0.8421</td><td>0.8344</td>
+      <td>0.9480</td><td>0.8526</td><td>0.8402</td>
+    </tr>
+    <tr>
+      <td><b>D4 — EffNet Minimal</b></td>
+      <td>5,926,998</td>
+      <td>0.9893</td><td>0.9182</td><td>0.9211</td>
+      <td>0.9872</td><td>0.9076</td><td>0.8995</td>
+      <td>0.9910</td><td>0.9203</td><td>0.9172</td>
+      <td>0.9889</td><td>0.9098</td><td><b>0.9054</b></td>
+    </tr>
+  </tbody>
+</table>
+
+----
 
 ## **Gráfica de la tijera — Bias² y Varianza**
 ![Gráfica Resultado Modelos](reports/grafica_tijera.jpeg)
