@@ -4,8 +4,9 @@ Modelo D1 — EfficientNetV2B0 Top (Serie descendente, paso 1)
 Proyecto : Clasificación Automática de Residuos - TrashNet (6 clases)
 Asignatura: Aprendizaje Profundo
 
-Cambio respecto a D2:
-    Ampliamos la capa Dense a 256 neuronas.
+Cambio respecto a D0:
+    Eliminamos BatchNormalization tras el GAP.
+    Mantenemos Dense(256) y reducimos el Dropout de 0.5 a 0.4.
 
 Arquitectura:
     EfficientNetV2B0 (ImageNet, descongelado)

@@ -264,10 +264,10 @@ $$F1_c = 2 \cdot \frac{\text{Precision}_c \cdot \text{Recall}_c}{\text{Precision
     <tr>
       <td><b>D4 — EffNet Minimal</b></td>
       <td>5,926,998</td>
-      <td>0.9893</td><td>0.9182</td><td>0.9211</td>
-      <td>0.9872</td><td>0.9076</td><td>0.8995</td>
-      <td>0.9910</td><td>0.9203</td><td>0.9172</td>
-      <td>0.9889</td><td>0.9098</td><td><b>0.9054</b></td>
+      <td>0.9989</td><td>0.9235</td><td>0.9395</td>
+      <td>0.9989</td><td>0.9147</td><td>0.9297</td>
+      <td>0.9990</td><td>0.9153</td><td>0.9288</td>
+      <td>0.9990</td><td>0.9140</td><td><b>0.9291</b></td>
     </tr>
   </tbody>
 </table>
@@ -283,13 +283,13 @@ Para construirla calculamos tres métricas a partir del F1 macro de cada modelo.
 
 La forma de tijera es clara en la Serie A: el bias² domina en los modelos simples y decrece al aumentar la complejidad, mientras que la varianza crece progresivamente indicando overfitting. La Serie D rompe completamente este patrón gracias al preentrenamiento en ImageNet, logrando bias² y varianza bajos de forma simultánea en todos sus modelos.
 
-Como modelo definitivo elegimos **D4-Minimal**, que con solo las capas finales descongeladas alcanza un error total de 0.095, apenas 0.009 por encima del mejor modelo (D0-Full con 0.086). En este caso descngelar la red completa aporta un beneficio marginal que no justifica el coste adicional de entrenamiento, haciendo de D4 la opción más eficiente en términos de rendimiento y coste. Además, D4 presenta un gran rendimiento en el resto de métricas, con un F1 macro de 0.905, una precisión de 0.900 y un recall de 0.917 en test.
+Como modelo definitivo elegimos **D4-Minimal**. Es importante destacar que, en todos los modelos de la Serie D, **se ha aplicado un _full fine-tuning_** (el backbone completo se ha descongelado utilizando un *learning rate* muy bajo para preservar los pesos base). La gran efectividad y eficiencia estructural de D4 radica de forma exclusiva en su cabeza de clasificación podada al mínimo (se han eliminado todas las capas ocultas densas y el clasificador actúa directamente tras el Dropout). Pese a la extrema simplicidad de su salida, este modelo no solo iguala sino que **supera** al modelo de máxima complejidad de la serie (D0-Full), reduciendo el error total a apenas 0.071 (frente al 0.086 de D0). Esto demuestra que el extractor original de ImageNet es tan eficiente que sobrecargar la cabeza predictiva con capas densas adicionales (D0 o D1) resulta contraproducente y limita la capacidad de generalización. D4 se consolida como el mejor modelo indiscutible de todo el experimento en términos absolutos y de coste computacional, presentando métricas excepcionales: F1-macro de 0.929, precisión de 0.930 y recall de 0.929 en test.
 
 | Modelo | Nº Parámetros | Split | Accuracy | Precision (Macro) | Recall (Macro) | F1 (Macro) |
 | :---------------------- | ------------: | :---- | -------: | ----------------: | -------------: | ---------: |
-| **D4 — EffNet Minimal** | 5,926,998 | Train | 0.9893 | 0.9872 | 0.9910 | 0.9889 |
-| | | Val | 0.9182 | 0.9076 | 0.9203 | 0.9098 |
-| | | Test | 0.9211 | 0.8995 | 0.9172 | **0.9054** |
+| **D4 — EffNet Minimal** | 5,926,998 | Train | 0.9989 | 0.9989 | 0.9990 | 0.9990 |
+| | | Val | 0.9235 | 0.9147 | 0.9153 | 0.9140 |
+| | | Test | 0.9395 | 0.9297 | 0.9288 | **0.9291** |
 ---
 
 ## 5. Estructura del Proyecto
@@ -315,35 +315,33 @@ Garbage-Classification/
 │   ├── 2.1.Modelo_Lineal_Garbage_Classification.ipynb  # Baseline con Regresión Logística + HOG
 │   ├── 2.2.Modelo_ML_Garbage_Classification.ipynb  # Clasificador SVM + HOG
 │   ├── 2.3.Modelo_Red_Neuronal_Simple.ipynb        # Red neuronal densa simple (A1)
-│   ├── 3.A2_cnn_small.ipynb                        # CNN pequeña desde cero (~1K params)
-│   ├── 3.A3_cnn_medium.ipynb                       # CNN mediana desde cero (~20K params)
-│   ├── 3.A4_cnn_large.ipynb                        # CNN grande desde cero (~95K params)
-│   ├── 3.A5_cnn_frontier.ipynb                     # CNN frontera desde cero (~424K params)
-│   ├── D0_effnet_full.ipynb                        # EfficientNetV2 — fine-tuning completo
-│   ├── D1_effnet_top.ipynb                         # EfficientNetV2 — solo capas superiores
-│   ├── D2_effnet_head.ipynb                        # EfficientNetV2 — cabeza personalizada
-│   ├── D3_effnet_gap.ipynb                         # EfficientNetV2 — con Global Avg Pooling
-│   └── D4_effnet_minimal.ipynb                     # EfficientNetV2 — mínimo descongelado (modelo final)
+│   ├── 3.Modelo_Red_Neuronal_Simple.ipynb          # Pruebas adicionales de arquitectura simple
+│   ├── 3.Modelo_D0.ipynb                           # Fase 1 y 2 en modelo D0 (EffNet Full)
+│   ├── 3.Modelo_D1.ipynb                           # Fase 1 y 2 en modelo D1 (EffNet Top)
+│   ├── 3.Modelo_D2.ipynb                           # Fase 1 y 2 en modelo D2 (EffNet Head)
+│   ├── 3.Modelo_D3.ipynb                           # Fase 1 y 2 en modelo D3 (EffNet GAP)
+│   └── 3.Modelo_D4.ipynb                           # Fase 1 y 2 en modelo D4 (Modelo final)
+│   *(Nota: Los modelos iterativos de la serie A fueron documentados en notebooks análogos)*
 │
 ├── models/                           # Definición de arquitecturas como módulos Python reutilizables
-│   ├── A1_simple_cnn.py              # Red neuronal densa simple
+│   ├── A1_simple_cnn.py             # Red neuronal densa simple
 │   ├── A2_cnn_small.py              # CNN pequeña con pocas capas convolucionales
 │   ├── A3_cnn_medium.py             # CNN mediana con regularización
 │   ├── A4_cnn_large.py              # CNN grande con BatchNorm y Dropout
 │   ├── A5_D5_cnn_frontier.py        # CNN frontera (mayor capacidad entrenada desde cero)
-│   ├── D0_effnet_full.py            # EfficientNetV2B0 — todos los pesos descongelados
-│   ├── D1_effnet_top.py             # EfficientNetV2B0 — bloque superior descongelado
-│   ├── D2_effnet_head.py            # EfficientNetV2B0 — cabeza densa personalizada
-│   ├── D3_effnet_gap.py             # EfficientNetV2B0 — con capa GAP adicional
-│   └── D4_effnet_minimal.py         # EfficientNetV2B0 — solo capas finales descongeladas
+│   ├── D0_effnet_full.py            # EfficientNetV2B0 — fine-tuning total con cabeza compleja
+│   ├── D1_effnet_top.py             # EfficientNetV2B0 — fine-tuning total con Dense(256)
+│   ├── D2_effnet_head.py            # EfficientNetV2B0 — fine-tuning total con Dense(128)
+│   ├── D3_effnet_gap.py             # EfficientNetV2B0 — fine-tuning total con Dense(6 artificial)
+│   └── D4_effnet_minimal.py         # EfficientNetV2B0 — fine-tuning total con clasificador lineal puro
 │
-├── scr/                             # Código fuente modular compartido entre notebooks
+├── src/                             # Código fuente modular compartido entre notebooks
 │   ├── __init__.py
 │   └── utils.py                     # Funciones auxiliares: carga de datos, split, callbacks, visualización
 │
-├── code_exmaple/                    # Notebooks de referencia de otros proyectos (SOTA externo)
-│   ├── garbage-classification-cnn.ipynb                    # Ejemplo CNN con Keras/TensorFlow
-│   ├── garbage-classification.ipynb                        # Ejemplo clasificación básica
+├── code_example/                    # Notebooks de referencia de otros proyectos (SOTA externo)
+│   ├── garbage-classification-cnn.ipynb                   # Ejemplo CNN con Keras/TensorFlow
+│   ├── garbage-classification.ipynb                       # Ejemplo clasificación básica
 │   └── pytorch-garbage-classification-95-accuracy.ipynb   # Ejemplo con PyTorch (95% accuracy)
 │
 ├── sota_references/                 # Papers y documentación del estado del arte consultada
@@ -397,4 +395,3 @@ Se presentan las referencias utilizadas, cada una acompañada de una frase que s
 [10] M. Nahiduzzaman, M. F. Ahamed, M. Naznine, M. J. Karim et al., _"An Automated Waste Classification System Using Deep Learning Techniques,"_ Knowledge-Based Systems, vol. 313, 112840, 2025.
 
 - Sistema automatizado que aplica técnicas profundas para clasificación de residuos a gran escala, enfocado en la sostenibilidad ambiental y la eficiencia del reciclaje con aplicaciones en entornos industriales.
-

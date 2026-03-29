@@ -4,10 +4,9 @@ Modelo D3 — EfficientNetV2B0 GAP (Serie descendente, paso 3)
 Proyecto : Clasificación Automática de Residuos - TrashNet (6 clases)
 Asignatura: Aprendizaje Profundo 
 
-Cambio respecto a D4:
-    Añadimos una capa Dense(6) explícita antes del softmax,
-    separando la extracción de características de la clasificación.
-    Pequeño aumento de complejidad en la cabeza.
+Cambio respecto a D2:
+    Reducimos la capa densa intermedia de 128 a 6 neuronas.
+    Mantenemos Dropout(0.3), generando un cuello de botella agresivo.
 
 Arquitectura:
     EfficientNetV2B0 (ImageNet, descongelado)

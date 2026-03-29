@@ -7,9 +7,8 @@ Asignatura: Aprendizaje Profundo
 El modelo más complejo de la serie descendente.
 Backbone EfficientNetV2B0 completamente descongelado desde el inicio.
 
-Cambio respecto a D1:
-    Añadimos BatchNormalization tras el GAP y aumentamos el Dropout
-    a 0.5 para compensar la mayor capacidad del modelo completo.
+Modelo de referencia (punto de partida de la serie D):
+    Cabeza completa con BatchNormalization + Dense(256) + Dropout(0.5).
 
 Arquitectura:
     EfficientNetV2B0 (ImageNet, descongelado)
