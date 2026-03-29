@@ -8,7 +8,7 @@
 
 Este repositorio contiene el proyecto final de la asignatura de Aprendizaje Profundo. El objetivo principal es desarrollar un sistema automatizado capaz de clasificar residuos en diferentes categorías (vidrio, papel, cartón, plástico, metal, etc.) utilizando técnicas de Visión por Computador y Deep Learning. Este proyecto busca mejorar la eficiencia en las plantas de reciclaje y promover la sostenibilidad ambiental.
 
-![Infografía del Proyecto](reports/figures/infografia_proyecto.png)
+![Infografía del Proyecto](reports/infografia_proyecto.png)
 
 ## 1. Definición del Problema y Datos
 
