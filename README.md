@@ -285,11 +285,13 @@ La forma de tijera es clara en la Serie A: el bias² domina en los modelos simpl
 
 Como modelo definitivo elegimos **D4-Minimal**. Es importante destacar que, en todos los modelos de la Serie D, **se ha aplicado un _full fine-tuning_** (el backbone completo se ha descongelado utilizando un *learning rate* muy bajo para preservar los pesos base). La gran efectividad y eficiencia estructural de D4 radica de forma exclusiva en su cabeza de clasificación podada al mínimo (se han eliminado todas las capas ocultas densas y el clasificador actúa directamente tras el Dropout). Pese a la extrema simplicidad de su salida, este modelo no solo iguala sino que **supera** al modelo de máxima complejidad de la serie (D0-Full), reduciendo el error total a apenas 0.071 (frente al 0.086 de D0). Esto demuestra que el extractor original de ImageNet es tan eficiente que sobrecargar la cabeza predictiva con capas densas adicionales (D0 o D1) resulta contraproducente y limita la capacidad de generalización. D4 se consolida como el mejor modelo indiscutible de todo el experimento en términos absolutos y de coste computacional, presentando métricas excepcionales: F1-macro de 0.929, precisión de 0.930 y recall de 0.929 en test.
 
-| Modelo | Nº Parámetros | Split | Accuracy | Precision (Macro) | Recall (Macro) | F1 (Macro) |
-| :---------------------- | ------------: | :---- | -------: | ----------------: | -------------: | ---------: |
-| **D4 — EffNet Minimal** | 5,926,998 | Train | 0.9989 | 0.9989 | 0.9990 | 0.9990 |
-| | | Val | 0.9235 | 0.9147 | 0.9153 | 0.9140 |
-| | | Test | 0.9395 | 0.9297 | 0.9288 | **0.9291** |
+
+| Métrica               | Train  | Val    | Test   |
+|------------------------|--------|--------|--------|
+| **Accuracy**           | 0.9989 | 0.9235 | 0.9395 |
+| **Precision (Macro)**  | 0.9989 | 0.9147 | 0.9297 |
+| **Recall (Macro)**     | 0.9990 | 0.9153 | 0.9288 |
+| **F1 (Macro)**         | 0.9990 | 0.9140 | **0.9291** |
 ---
 
 ## 5. Estructura del Proyecto
